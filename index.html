@@ -1,0 +1,570 @@
+<!-- <?php
+/*
+Template Name: 3D Sofa Configurator
+ */
+?> -->
+
+
+<!-- <?php
+
+if (isset($_GET["creatproduct"]) && $_GET["creatproduct"] == 1) {
+    $price = $_GET["price"];
+    $details = $_GET["property"];
+    $user_id = get_current_user_id();
+    $user_info = get_userdata($user_id);
+    $user_name = $user_info->user_login;
+    // $thumbnail = 'http://localhost/sofally/wp-content/uploads/custom_product_' + $user_id + '.jpg';
+    // $getItem = $_GET['uid']; //puts the uid varialbe into $somevar
+
+    $objProduct = new WC_Product();
+
+    $objProduct->set_name("Custom Sofa of \"" . $user_name . "\", USER ID: " . $user_id . " Made");
+    $objProduct->set_status("publish"); // can be publish,draft or any wordpress post status
+    $objProduct->set_catalog_visibility('hidden'); // add the product visibility status
+    $objProduct->set_description($details);
+    // $objProduct->set_sku("product-sku"); //can be blank in case you don't have sku, but You can't add duplicate sku's
+    $objProduct->set_price($price); // set product price
+    $objProduct->set_regular_price($price); // set product regular price
+    $objProduct->set_manage_stock(true); // true or false
+    $objProduct->set_stock_quantity(1);
+    $objProduct->set_stock_status('instock'); // in stock or out of stock value
+    $objProduct->set_backorders('no');
+    $objProduct->set_reviews_allowed(true);
+    $objProduct->set_sold_individually(false);
+    // $objProduct->set_post_thumbnail($thumbnail);
+    // $objProduct->set_category_ids(); // array of category ids, You can get category id from WooCommerce Product Category Section of Wordpress Admin
+    $product_id = $objProduct->save();
+
+    WC()->cart->add_to_cart($product_id);
+
+    wp_safe_redirect(wc_get_checkout_url());
+}
+
+?>
+
+
+
+<?php get_header(); ?> -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>3d sofa price calculator</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <link rel="icon" href="texture/favicon.png" type="image/png" sizes="16x16">
+    <link type="text/css" rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <meta http-equiv="ScreenOrientation" content="autoRotate:disabled">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <style>
+        #footer {
+            display: none;
+        }
+
+        .woo-multi-currency {
+            display: none;
+        }
+
+        #scroll-top {
+            display: none !important;
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+
+    <!-- <div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v3.2"></script> -->
+
+
+    <div class="container progress">
+        <h1 id="step0">Select Sofa Design</h1>
+    </div>
+    <div id="category-list">
+        <p>Hello</p>
+    </div>
+    <div id="sofa-config-panel">
+
+        <svg id="step1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 190.55 428.68">
+            <defs>
+                <style>
+                    @import url("https://fonts.googleapis.com/css?family=Raleway:400,400i,700,700i");
+
+                    .cls-1 {
+                        fill: #e2e2e2;
+                    }
+
+                    .cls-2,
+                    .cls-3 {
+                        fill: #e3ac7b;
+                    }
+
+                    .cls-2 {
+                        stroke: #e3ac7b;
+                        stroke-miterlimit: 10;
+                    }
+
+                    .cls-16,
+                    .cls-4,
+                    .cls-8 {
+                        isolation: isolate;
+                        fill: #333;
+                        font-family: Raleway-Regular, Raleway;
+                    }
+
+                    .cls-4 {
+                        font-size: 21px;
+                    }
+
+                    .cls-5 {
+                        letter-spacing: 0em;
+                    }
+
+                    .cls-6 {
+                        letter-spacing: -0.03em;
+                    }
+
+                    .cls-7 {
+                        letter-spacing: 0em;
+                    }
+
+                    .cls-16,
+                    .cls-8 {
+                        font-size: 12px;
+                    }
+
+                    .cls-18,
+                    .cls-8 {
+                        letter-spacing: -0.05em;
+                    }
+
+                    .cls-9 {
+                        letter-spacing: -0.08em;
+                    }
+
+                    .cls-10 {
+                        letter-spacing: -0.07em;
+                    }
+
+                    .cls-11 {
+                        letter-spacing: -0.07em;
+                    }
+
+                    .cls-12 {
+                        letter-spacing: -0.06em;
+                    }
+
+                    .cls-13 {
+                        letter-spacing: -0.05em;
+                    }
+
+                    .cls-14 {
+                        letter-spacing: -0.06em;
+                    }
+
+                    .cls-15 {
+                        letter-spacing: -0.05em;
+                    }
+
+                    .cls-16 {
+                        letter-spacing: -0.06em;
+                    }
+
+                    .cls-17 {
+                        letter-spacing: -0.06em;
+                    }
+
+                    .cls-19 {
+                        letter-spacing: -0.06em;
+                    }
+
+                    .cls-20 {
+                        letter-spacing: -0.08em;
+                    }
+
+                    .cls-21 {
+                        letter-spacing: -0.05em;
+                    }
+                </style>
+            </defs>
+            <title>progressbar1</title>
+            <rect class="cls-1" x="18.5" y="19.5" width="1" height="193" />
+            <path class="cls-2" d="M19,20h0m1-1H18V213h2Z" />
+            <rect class="cls-1" x="18.5" y="213.5" width="1" height="193" />
+            <path class="cls-1" d="M19,214h0m1-1H18V407h2Z" />
+            <circle class="cls-3" cx="19" cy="19" r="19" />
+            <circle class="cls-1" cx="19" cy="407" r="19" />
+            <circle class="cls-1" cx="19" cy="213" r="19" /><text class="cls-4" transform="translate(48.66 19.21)">
+                <tspan class="cls-5">S</tspan>
+                <tspan x="12.64" y="0">TE</tspan>
+                <tspan class="cls-6" x="38.24" y="0">P</tspan>
+                <tspan class="cls-7" x="50.74" y="0" xml:space="preserve"> 1</tspan>
+            </text><text class="cls-4" transform="translate(48.66 407.21)">
+                <tspan class="cls-5">S</tspan>
+                <tspan x="12.64" y="0">TE</tspan>
+                <tspan class="cls-6" x="38.24" y="0">P</tspan>
+                <tspan class="cls-7" x="50.74" y="0" xml:space="preserve"> 3</tspan>
+            </text><text class="cls-4" transform="translate(48.66 213.21)">
+                <tspan class="cls-5">S</tspan>
+                <tspan x="12.64" y="0">TE</tspan>
+                <tspan class="cls-6" x="38.24" y="0">P</tspan>
+                <tspan class="cls-7" x="50.74" y="0" xml:space="preserve"> 2</tspan>
+            </text><text class="cls-8" transform="translate(48.66 38)">Build<tspan class="cls-9" x="25.52" y="0">
+                </tspan>
+                <tspan class="cls-10" x="27.66" y="0">y</tspan>
+                <tspan x="33.36" y="0">ou</tspan>
+                <tspan class="cls-11" x="46.45" y="0">r</tspan>
+                <tspan x="49.79" y="0" xml:space="preserve"> s</tspan>
+                <tspan class="cls-12" x="57.52" y="0">of</tspan>
+                <tspan x="67.25" y="0">a</tspan>
+            </text><text class="cls-8" transform="translate(48.66 232)">Choose m<tspan class="cls-13" x="51.78" y="0">a
+                </tspan>
+                <tspan class="cls-14" x="57.68" y="0">t</tspan>
+                <tspan x="60.96" y="0">erials and </tspan>
+                <tspan class="cls-15" x="111.13" y="0">c</tspan>
+                <tspan x="117.07" y="0">olors</tspan>
+            </text><text class="cls-16" transform="translate(48.66 426)">R<tspan class="cls-17" x="7.07" y="0">e</tspan>
+                <tspan class="cls-18" x="13.36" y="0">vi</tspan>
+                <tspan class="cls-19" x="21.19" y="0">e</tspan>
+                <tspan class="cls-20" x="27.48" y="0">w</tspan>
+                <tspan class="cls-21" x="36.32" y="0" xml:space="preserve"> and chec</tspan>
+                <tspan class="cls-20" x="85.37" y="0">k</tspan>
+                <tspan class="cls-18" x="90.81" y="0">out</tspan>
+            </text>
+        </svg>
+        <svg id="step2" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 190.55 428.68">
+            <defs>
+                <style>
+                    @import url("https://fonts.googleapis.com/css?family=Raleway:400,400i,700,700i");
+
+                    .cls-1 {
+                        fill: #e2e2e2;
+                    }
+
+                    .cls-2,
+                    .cls-3 {
+                        fill: #e3ac7b;
+                    }
+
+                    .cls-2 {
+                        stroke: #e3ac7b;
+                        stroke-miterlimit: 10;
+                    }
+
+                    .cls-16,
+                    .cls-4,
+                    .cls-8 {
+                        isolation: isolate;
+                        fill: #333;
+                        font-family: Raleway-Regular, Raleway;
+                    }
+
+                    .cls-4 {
+                        font-size: 21px;
+                    }
+
+                    .cls-5 {
+                        letter-spacing: 0em;
+                    }
+
+                    .cls-6 {
+                        letter-spacing: -0.03em;
+                    }
+
+                    .cls-7 {
+                        letter-spacing: 0em;
+                    }
+
+                    .cls-16,
+                    .cls-8 {
+                        font-size: 12px;
+                    }
+
+                    .cls-18,
+                    .cls-8 {
+                        letter-spacing: -0.05em;
+                    }
+
+                    .cls-9 {
+                        letter-spacing: -0.08em;
+                    }
+
+                    .cls-10 {
+                        letter-spacing: -0.07em;
+                    }
+
+                    .cls-11 {
+                        letter-spacing: -0.07em;
+                    }
+
+                    .cls-12 {
+                        letter-spacing: -0.06em;
+                    }
+
+                    .cls-13 {
+                        letter-spacing: -0.05em;
+                    }
+
+                    .cls-14 {
+                        letter-spacing: -0.06em;
+                    }
+
+                    .cls-15 {
+                        letter-spacing: -0.05em;
+                    }
+
+                    .cls-16 {
+                        letter-spacing: -0.06em;
+                    }
+
+                    .cls-17 {
+                        letter-spacing: -0.06em;
+                    }
+
+                    .cls-19 {
+                        letter-spacing: -0.06em;
+                    }
+
+                    .cls-20 {
+                        letter-spacing: -0.08em;
+                    }
+
+                    .cls-21 {
+                        letter-spacing: -0.05em;
+                    }
+                </style>
+            </defs>
+            <title>progressbar2</title>
+            <rect class="cls-1" x="18.5" y="19.5" width="1" height="193" />
+            <path class="cls-2" d="M19,20h0m1-1H18V213h2Z" />
+            <rect class="cls-1" x="18.5" y="213.5" width="1" height="193" />
+            <path class="cls-2" d="M19,214h0m1-1H18V407h2Z" />
+            <circle class="cls-3" cx="19" cy="19" r="19" />
+            <circle class="cls-1" cx="19" cy="407" r="19" />
+            <circle class="cls-3" cx="19" cy="213" r="19" /><text class="cls-4" transform="translate(48.66 19.21)">
+                <tspan class="cls-5">S</tspan>
+                <tspan x="12.64" y="0">TE</tspan>
+                <tspan class="cls-6" x="38.24" y="0">P</tspan>
+                <tspan class="cls-7" x="50.74" y="0" xml:space="preserve"> 1</tspan>
+            </text><text class="cls-4" transform="translate(48.66 407.21)">
+                <tspan class="cls-5">S</tspan>
+                <tspan x="12.64" y="0">TE</tspan>
+                <tspan class="cls-6" x="38.24" y="0">P</tspan>
+                <tspan class="cls-7" x="50.74" y="0" xml:space="preserve"> 3</tspan>
+            </text><text class="cls-4" transform="translate(48.66 213.21)">
+                <tspan class="cls-5">S</tspan>
+                <tspan x="12.64" y="0">TE</tspan>
+                <tspan class="cls-6" x="38.24" y="0">P</tspan>
+                <tspan class="cls-7" x="50.74" y="0" xml:space="preserve"> 2</tspan>
+            </text><text class="cls-8" transform="translate(48.66 38)">Build<tspan class="cls-9" x="25.52" y="0">
+                </tspan>
+                <tspan class="cls-10" x="27.66" y="0">y</tspan>
+                <tspan x="33.36" y="0">ou</tspan>
+                <tspan class="cls-11" x="46.45" y="0">r</tspan>
+                <tspan x="49.79" y="0" xml:space="preserve"> s</tspan>
+                <tspan class="cls-12" x="57.52" y="0">of</tspan>
+                <tspan x="67.25" y="0">a</tspan>
+            </text><text class="cls-8" transform="translate(48.66 232)">Choose m<tspan class="cls-13" x="51.78" y="0">a
+                </tspan>
+                <tspan class="cls-14" x="57.68" y="0">t</tspan>
+                <tspan x="60.96" y="0">erials and </tspan>
+                <tspan class="cls-15" x="111.13" y="0">c</tspan>
+                <tspan x="117.07" y="0">olors</tspan>
+            </text><text class="cls-16" transform="translate(48.66 426)">R<tspan class="cls-17" x="7.07" y="0">e</tspan>
+                <tspan class="cls-18" x="13.36" y="0">vi</tspan>
+                <tspan class="cls-19" x="21.19" y="0">e</tspan>
+                <tspan class="cls-20" x="27.48" y="0">w</tspan>
+                <tspan class="cls-21" x="36.32" y="0" xml:space="preserve"> and chec</tspan>
+                <tspan class="cls-20" x="85.37" y="0">k</tspan>
+                <tspan class="cls-18" x="90.81" y="0">out</tspan>
+            </text>
+        </svg>
+
+        <div id="mobile-price" class="mobile-check"><span id="mobile-value">$0</span> USD</div>
+        <div id="mobile-checkout" class="mobile-check">CHECKOUT</div>
+        <button id="exit-fullscreen"><i class="fa fa-compress"></i></button>
+        <button id="screenshot-fullscreen"><i class="fa fa-camera"></i></button>
+        <button id="save-fullscreen"><i class="fa fa-save"></i></button>
+        <button id="undo-fullscreen"><i class="fa fa-undo"></i></button>
+        <button id="redo-fullscreen"><i class="fa fa-redo"></i></button>
+        <div id="canvasSofa"></div>
+        <div class='side-drawer expanded'>
+            <span class="toggle-collapse fa fa-angle-right fa-2x"></span>
+
+            <button id="build-sofa" class="accordion prt-ac prt-exp">Build your sofa<span
+                    class="fa fa-chevron-circle-up"></span></button>
+
+            <button id="setup-btn" class="accordion chd-ac">place component<span
+                    class="fa fa-chevron-circle-up"></span></button>
+            <div id="select-type" class="panel chd-pn" style="display: block;"></div>
+            <button id="add-btn" class="accordion chd-ac">add on<span class="fa fa-chevron-circle-down"></span></button>
+            <div id="additional-items" class="panel chd-pn"></div>
+
+            <button id="material-btn" class="accordion">choose Materials<span
+                    class="fa fa-chevron-circle-down"></span></button>
+            <div class="panel" data-cat="corvering">
+                <div id='select-covering'>
+                    <div class='content-item corvering' data-texture="bonded">
+                        <img src="texture/bonded-thumb.png" width="12%">
+                        <p>STANDARD - Bonded Leather</p>
+                    </div>
+                    <div class='content-item corvering' data-texture="genuine">
+                        <img src="texture/genuine-thumb.png" width="24%">
+                        <p>LUXURY - Genuine Leather</p>
+                    </div>
+                    <div class='content-item corvering' data-texture="italian">
+                        <img src="texture/italian-thumb.png" width="36%">
+                        <p>ULTRA LUXURY - Italian Leather</p>
+                    </div>
+                </div>
+            </div>
+            <button id="color-btn" class="accordion">choose colors<span
+                    class="fa fa-chevron-circle-down"></span></button>
+            <div class="panel" id="color-selector">
+            </div>
+
+        </div>
+
+        <img src="texture/firstview.png" id="firstview" alt="">
+        <img src="texture/birdview.png" id="birdview" alt="">
+
+    </div>
+    <div class="footer-section">
+        <div id="footer-btn" class="btn-group">
+            <button id="save-btn">SAVE</button>
+            <button id="fullscreen-btn">FULLSCREEN</button>
+            <button class="lrm-login" id="screenshot-btn">SCREENSHOT</button>
+            <button id="undo">
+                <span class="btn-undo"><img src="assets/images/undo.png" alt="" class="image-fluid"></span>
+            </button>
+            <button id="redo">
+                <span class="btn-redo"><img src="assets/images/redo.png" alt="" class="image-fluid"></span>
+            </button>
+            <button id="share-btn"><i class="fa fa-share-alt"></i>
+                <div id="social-wrapper" class="social-hide">
+                    <ul id="social-list">
+                        <li><img id="fb-btn" src="assets/images/fb-btn.png" alt="">
+                        </li>
+                        <li><img id="is-btn" src="assets/images/is-btn.png" alt="">
+                        </li>
+                        <li><img id="pi-btn" src="assets/images/pi-btn.png" alt="">
+                        </li>
+                        <li><img id="tw-btn" src="assets/images/tw-btn.png" alt="">
+                        </li>
+                    </ul>
+                </div>
+            </button>
+
+        </div>
+        <div class="price-check">
+            <span id="price-value">$0</span>
+            <span> USD</span>
+            <button id="checkout-btn">PROCEED TO CHECKOUT</button>
+        </div>
+    </div>
+
+
+    <div class="mobile-swip">
+        <div id="mobile-build" class="mobile-btn"><img src="assets/images/pen.png" alt=""> BUILD YOUR SOFA
+        </div>
+        <div id="mobile-color" class="mobile-btn"><img src="assets/images/leather.png" alt=""> MATERIALS
+        </div>
+        <div id="mobile-colors" class="mobile-btn"><img src="assets/images/color.png" alt=""> COLORS</div>
+        <div id="mobile-undo" class="mobile-btn"><img src="assets/images/undom.png" alt=""> UNDO</div>
+        <div id="mobile-redo" class="mobile-btn"><img src="assets/images/redom.png" alt=""> REDO</div>
+        <div id="mobile-fullscr" class="mobile-btn"><img src="assets/images/fullscreen.png" alt="">
+            FULLSCREEN</div>
+        <div id="mobile-scrshot" class="mobile-btn"><img src="assets/images/cam.png" alt=""> SCREENSHOT
+        </div>
+        <div id="mobile-save" class="mobile-btn"><img src="assets/images/save.png" alt=""> SAVE</div>
+        <div id="mobile-share" class="mobile-btn"><img src="assets/images/share.png" alt=""> SHARE</div>
+    </div>
+
+    <div id="mobile-sw" class="social-hide">
+        <img id="fb-btn" src="assets/images/fb-btn.png" alt="">
+        <img id="is-btn" src="assets/images/is-btn.png" alt="">
+        <img id="pi-btn" src="assets/images/pi-btn.png" alt="">
+        <img id="tw-btn" src="assets/images/tw-btn.png" alt="">
+    </div>
+
+
+    <i id="load-data" class="fa fa-folder-open fa-4x" aria-hidden="true"></i>
+    <i id="success" class="fa fa-check-circle-o"></i>
+
+    <div id="check-alert">
+        <div id="alert">
+            <p>To checkout your model, you need a Sofally account. Please continue to register.</p>
+            <button id="back-btn">BACK</button>
+            <a href="#" target="_blank" title=""><button id="continue-btn">CONTINUE</button></a>
+        </div>
+    </div>
+    <div id="save-alert">
+        <div id="alert">
+            <p>Saving model requires Sofally account. Please continue to save your model.</p>
+            <button id="back-s-btn">BACK</button>
+            <a href="#" target="_blank" title=""><button id="continue-s-btn">CONTINUE</button></a>
+        </div>
+    </div>
+    <div id="out-alert">
+        <div id="alert">
+            <p>Please ensure your sofa design is saved in your system before checking out. Saving requires a Sofally
+                account.</p>
+            <button id="back-o-btn">BACK</button>
+            <button id="continue-o-btn">CONTINUE</button>
+        </div>
+    </div>
+
+    <!-- <div class="fb-share-button" data-href="https://www.sofally.com/sofathree" data-layout="button" data-size="large"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.sofally.com%2Fsofathree&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div> -->
+
+    <script src="assets/js/vendor/webGL/three.js"></script>
+    <script src="assets/js/vendor/webGL/RectAreaLightUniformsLib.js">
+    </script>
+    <script src="assets/js/vendor/webGL/OrbitControls.js"></script>
+    <script src="assets/js/vendor/webGL/TransformControls.js">
+    </script>
+    <script src="assets/js/vendor/webGL/dat.gui.min.js"></script>
+    <script src="assets/js/vendor/webGL/stats.min.js"></script>
+    <script src="assets/js/vendor/webGL/webGL.js"></script>
+    <script src="assets/js/vendor/webGL/loader/TDSLoader.js">
+    </script>
+    <script src="assets/js/THREEx.screenshot.js"></script>
+    <script src="assets/js/vendor/undoStack/UndoManager.js"></script>
+    <script src="assets/js/vendor/jquery/jquery.min.js"></script>
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/sofa-configurator.js"></script>
+    <script src="assets/js/jquery.fullscreen.js"></script>
+    <script>
+        // theme_directory = "<?php echo get_template_directory_uri() ?>";
+        // ajaxurl = "<?php echo admin_url('admin-ajax.php'); ?>";
+        // homeurl = "<?php get_site_url(); ?>";
+        var saveExist;
+        var strData;
+        var currentpst = [];
+        currentpst.x = 0;
+        currentpst.y = 0;
+        currentpst.z = 0;
+    </script>
+</body>
+
+</html>
+
+<!-- <?php
+$user_id = get_current_user_id();
+$save_exist = get_user_meta($user_id, 'Saved_Model', false);
+if (empty($save_exist)) {
+    echo "<script> saveExist = false; </script>";
+} else {
+    echo "<script> saveExist = true; </script>";
+}
+
+?>
+
+    <?php get_footer(); ?> -->
